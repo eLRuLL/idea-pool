@@ -9,12 +9,18 @@ import { Idea } from '../idea';
 export class DashboardComponent implements OnInit {
   ideas: Idea[];
 
+  editMode: number;
+
   constructor() {
     this.ideas = [
       {id: 1, description: 'cosaloca', ease: 10, confidence: 10, impact: 10, average: 10},
       {id: 2, description: 'cosaloca2', ease: 10, confidence: 5, impact: 10, average: 20},
       {id: 3, description: 'cosaloca3', ease: 1, confidence: 6, impact: 10, average: 100},
     ];
+  }
+
+  editIdea(idea: Idea): void {
+    this.editMode = idea.id;
   }
 
   ngOnInit() {

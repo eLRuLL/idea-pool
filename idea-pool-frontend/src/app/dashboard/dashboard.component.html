@@ -1,20 +1,20 @@
-<table>
-  <thead>
-  <tr>
-    <th></th>
-    <th>Impact</th>
-    <th>Ease</th>
-    <th>Confidence</th>
-    <th>Avg.</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr class="idea" *ngFor="let idea of ideas">
-    <td class="idea-description">{{idea.description}}</td>
-    <td class="idea-impact">{{idea.impact}}</td>
-    <td class="idea-ease">{{idea.ease}}</td>
-    <td class="idea-confidence">{{idea.confidence}}</td>
-    <td class="idea-average">{{idea.average}}</td>
-  </tr>
-  </tbody>
-</table>
+<div>
+    <div></div>
+    <div>Impact</div>
+    <div>Ease</div>
+    <div>Confidence</div>
+    <div>Avg.</div>
+</div>
+<ul>
+  <li class="idea" *ngFor="let idea of ideas">
+    <div *ngIf="editMode !== idea.id">
+    <span class="idea-description">{{idea.description}}</span>
+    <span class="idea-impact">{{idea.impact}}</span>
+    <span class="idea-ease">{{idea.ease}}</span>
+    <span class="idea-confidence">{{idea.confidence}}</span>
+    <span class="idea-average">{{idea.average}}</span>
+    <span> <button (click)="editIdea(idea)">edit</button></span>
+    <span> <button>delete</button></span>
+    </div>
+  </li>
+</ul>
